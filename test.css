@@ -4,7 +4,7 @@
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	background: #FFF;
+	background: #909090;
 	width: 100%;
 	z-index: 10;
 }
@@ -16,6 +16,14 @@
 	width:550px;
 	z-index: 10;
 }
+
+canvas {
+			background-color: #FFFFFF;
+			position: relative;
+			top: 10%;
+			left: 20%;
+		}
+
 #dialogbox > div{ background:#FFF; margin:8px; }
 #dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
 #dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
