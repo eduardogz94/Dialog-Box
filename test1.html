@@ -6,7 +6,6 @@
    </head>
    <body>
      
-     <canvas id="canvas" width="800" height="400"></canvas>
        <div id="dialogoverlay"></div>
        <div id="dialogbox">
        <div>
@@ -15,21 +14,23 @@
          <div id="dialogboxfooter"></div>
         </div>
     </div>  
-
+     <h2 id="resultx"> 0</h2>
      <h2>Web Box</h2>
-     <button onclick="rect.render('You look very pretty today.')">Custom Alert</button>
-     <button onclick="rect.render('And you also smell very nice.')">Custom Alert 2</button>
+     <button onclick="rect.dibujar('You look very pretty today.')">Custom Alert</button>
+     <button onclick="rect.dibujar('And you also smell very nice.')">Custom Alert 2</button>
     
      <script>
        
        var button = document.getElementById("button");
-       var canvas = document.getElementById("canvas");
-       var ctx = canvas.getContext("2d");
-       var onMove = false;
-       var z = dialogbox.style.left;
-       var v = dialogbox.style.top;
-     
-         class Rectangulo {
+       var dialogbox = document.getElementById('dialogbox'); 
+       var z = 400;
+       var v = 200;
+       var dialogboxhead = document.getElementById('dialogboxhead');
+       var dialogboxbody = document.getElementById('dialogboxbody');
+       var dialogboxfooter = document.getElementById('dialogboxfooter'); 
+
+
+         class Alerta {
            constructor(){
              this.x = z;
              this.y = v;
@@ -37,21 +38,16 @@
              this.w = 20;
            }
 
-           dibujar(){    
-             ctx.clearRect(0,0, canvas.width, canvas.height);
-             ctx.fillStyle = "black";
-             ctx.rect(this.x, this.y, this.w, this.h);
-             ctx.fill();   
-           }
-
-           render(dialog){
+           dibujar(dialog){    
              var dialogoverlay = document.getElementById('dialogoverlay');
              var dialogbox = document.getElementById('dialogbox');
-             dialogbox.style.left = (canvas.width/2) + "px";
-             dialogbox.style.top = (canvas.height/2) +"px";
-             document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
-             document.getElementById('dialogboxbody').innerHTML = dialog;
-             document.getElementById('dialogboxfooter').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+             dialogbox.style.left = z + "px";
+             dialogbox.style.top = v + "px";
+             dialogbox.style.display = "inline";
+             dialogoverlay.style.display = "block"; 
+             dialogboxhead.innerHTML = "Acknowledge This Message";
+             dialogboxbody.innerHTML = dialog;
+             dialogboxfooter.innerHTML = '<button onclick="rect.ok()">OK</button>';  
            }
   
            ok(){
@@ -61,41 +57,22 @@
         }
  
 
- var rect = new Rectangulo();
- rect.dibujar();
+ var rect = new Alerta();
   
- function oMousePos(canvas, evt) {
-   var client = canvas.getBoundingClientRect();
+ function oMousePos(evt) {
      return { // devuelve un objeto
-          x: Math.round(evt.clientX - client.left),
-          y: Math.round(evt.clientY - client.top)
+          posx: Math.round(evt.clientX),
+          posy: Math.round(evt.clientY)  
      };
  }
 
- ctx.canvas.addEventListener("mousedown", function(evt) {   
-     var mousePos = oMousePos(canvas, evt);
-     if (ctx.isPointInPath(mousePos.x, mousePos.y)) {
-         onMove = true;
-         z = z - mousePos.x;
-         v = v - mousePos.y;
-         rect.dibujar(); 
-         rect.render();
-     }
- }, false);
 
- ctx.canvas.addEventListener("mousemove", function(evt) {
-     var mousePos = oMousePos(canvas, evt);
-     if (onMove) {
-         z = mousePos.x + rect.x; 
-         v = mousePos.y + rect.y;
-         rect.dibujar();
-         rect.render();
-     }
- }, false);
+ function mouseX(e){
+  var x = document.getElementById("resultx");
+  x.innerHTML = e.clientX;
+ }
 
- ctx.canvas.addEventListener("mouseup", function(evt) {
-     onMove = false;
- }, false);
+ document.onmousemove = mouseX;
 
        </script> 
   </body>

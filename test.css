@@ -1,7 +1,6 @@
 #dialogoverlay{
 	display: none;
 	opacity: .8;
-	position: fixed;
 	top: 0px;
 	left: 0px;
 	background: #909090;
@@ -10,15 +9,15 @@
 }
 #dialogbox{
 	display: none;
-	position: fixed;
+	position: absolute;
 	background: #000;
 	border-radius:7px; 
-	width:550px;
+	width:200px;
 	z-index: 10;
 }
 
 canvas {
-			background-color: #FFFFFF;
+			background-color: #000111;
 			position: relative;
 			top: 10%;
 			left: 20%;
