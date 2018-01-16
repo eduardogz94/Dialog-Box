@@ -2,6 +2,7 @@
  var dialogboxhead = document.getElementById('dialogboxhead');
  var dialogboxbody = document.getElementById('dialogboxbody');
  var dialogboxfooter = document.getElementById('dialogboxfooter'); 
+ var dialogoverlay = document.getElementById('dialogoverlay');
  var pos1x = 400;
  var pos1y = 200;
  var onMove = false;
@@ -13,20 +14,18 @@
        	 }
 
          dibujar(dialog){    
-         	 var dialogoverlay = document.getElementById('dialogoverlay');
-         	 var dialogbox = document.getElementById('dialogbox');
          	 dialogbox.style.left = pos1x + "px";
          	 dialogbox.style.top = pos1y + "px";
-         	 dialogbox.style.display = "inline";
+         	 dialogbox.style.display = "block";
+         	 dialogoverlay.style.display = "block";
          	 dialogboxhead.innerHTML = "Web Development";
          	 dialogboxbody.innerHTML = dialog;
          	 dialogboxfooter.innerHTML = '<button onclick="dialogb.ok()">OK</button>';  
        	 }
   
        	 ok(){
-         	 document.getElementById('dialogbox').style.display = "none";
-         	 document.getElementById('dialogoverlay').style.display = "none";
-       	 }
+         	 dialogbox.style.display = "none";
+         }
      
      }
  
