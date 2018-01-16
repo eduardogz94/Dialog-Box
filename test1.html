@@ -25,6 +25,7 @@
        var dialogbox = document.getElementById('dialogbox'); 
        var z = 400;
        var v = 200;
+       var onMove = false;
        var dialogboxhead = document.getElementById('dialogboxhead');
        var dialogboxbody = document.getElementById('dialogboxbody');
        var dialogboxfooter = document.getElementById('dialogboxfooter'); 
@@ -44,7 +45,6 @@
              dialogbox.style.left = z + "px";
              dialogbox.style.top = v + "px";
              dialogbox.style.display = "inline";
-             dialogoverlay.style.display = "block"; 
              dialogboxhead.innerHTML = "Acknowledge This Message";
              dialogboxbody.innerHTML = dialog;
              dialogboxfooter.innerHTML = '<button onclick="rect.ok()">OK</button>';  
@@ -60,19 +60,37 @@
  var rect = new Alerta();
   
  function oMousePos(evt) {
+  var client = dialogbox.getBoundingClientRect();
      return { // devuelve un objeto
-          posx: Math.round(evt.clientX),
-          posy: Math.round(evt.clientY)  
+          x: Math.round(evt.clientX - client.left),
+          y: Math.round(evt.clientY - client.top) 
      };
  }
 
 
  function mouseX(e){
-  var x = document.getElementById("resultx");
-  x.innerHTML = e.clientX;
- }
+    var x = document.getElementById("resultx");
+    x.innerHTML = e.clientX;
+   }
 
+   function mousedown(e){
+    var mouse = oMousePos(e);
+     onMove = true;
+     z = z - mouse.x;
+     v = v - mouse.y; 
+     dialogbox.style.top = (dialogbox.offsetTop - mouse.y) + "px";
+     dialogbox.style.left = (dialogbox.offsetTop - mouse.x) + "px";
+   }
+
+   function mousemove(e){
+    var mousePos = oMousePos(e);
+     if (onMove) {
+         z = mouse.x + rect.x; 
+         v = mouse.y + rect.y;
+   }
+}
  document.onmousemove = mouseX;
+ document.onmousedown = mousedown;
 
        </script> 
   </body>
