@@ -22,8 +22,14 @@
        	 }
      	
        	 maxA(){
- 	 		 dialogbox.style.width = "1000" + "px";
- 	 		 dialogbox.style.height = "600" + "px";
+       	 	 dialogbox.style.width = "600" + "px";
+ 	 	 	 dialogbox.style.height = "200" + "px";
+ 	 		 dialogboxbody.style.width = "545" + "px";
+ 	 		 dialogboxbody.style.height = "66" + "px";
+ 	 		 dialogboxhead.style.width = "575" + "px";
+ 	 		 dialogboxhead.style.height = "66" + "px";
+ 	 		 dialogboxfooter.style.width = "585" + "px";
+ 	 		 dialogboxfooter.style.height = "66" + "px";
  		 }
 
  		 cerrar(){
@@ -34,6 +40,12 @@
  		 minA(){
      	 	 dialogbox.style.width = "400" + "px";
  	 	 	 dialogbox.style.height = "108" + "px";
+ 	 		 dialogboxbody.style.width = "346" + "px";
+ 	 		 dialogboxbody.style.height = "12" + "px";
+ 	 		 dialogboxhead.style.width = "376" + "px";
+ 	 		 dialogboxhead.style.height = "31" + "px";
+ 	 		 dialogboxfooter.style.width = "585" + "px";
+ 	 		 dialogboxfooter.style.height = "0" + "px";
  		 }
 
      }
