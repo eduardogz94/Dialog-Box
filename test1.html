@@ -23,8 +23,8 @@
        
        var button = document.getElementById("button");
        var dialogbox = document.getElementById('dialogbox'); 
-       var z = 400;
-       var v = 200;
+       var pos1x = 400;
+       var pos1y = 200;
        var onMove = false;
        var dialogboxhead = document.getElementById('dialogboxhead');
        var dialogboxbody = document.getElementById('dialogboxbody');
@@ -33,8 +33,8 @@
 
          class Alerta {
            constructor(){
-             this.x = z;
-             this.y = v;
+             this.x = pos1x;
+             this.y = pos1y;
              this.h = 20;
              this.w = 20;
            }
@@ -42,8 +42,8 @@
            dibujar(dialog){    
              var dialogoverlay = document.getElementById('dialogoverlay');
              var dialogbox = document.getElementById('dialogbox');
-             dialogbox.style.left = z + "px";
-             dialogbox.style.top = v + "px";
+             dialogbox.style.left = pos1x + "px";
+             dialogbox.style.top = pos1y + "px";
              dialogbox.style.display = "inline";
              dialogboxhead.innerHTML = "Acknowledge This Message";
              dialogboxbody.innerHTML = dialog;
@@ -68,25 +68,20 @@
  }
 
 
- function mouseX(e){
-    var x = document.getElementById("resultx");
-    x.innerHTML = e.clientX;
-   }
-
    function mousedown(e){
     var mouse = oMousePos(e);
      onMove = true;
-     z = z - mouse.x;
-     v = v - mouse.y; 
-     dialogbox.style.top = (dialogbox.offsetTop - mouse.y) + "px";
-     dialogbox.style.left = (dialogbox.offsetTop - mouse.x) + "px";
+     pos2x = pos1x - mouse.x;
+     pos2y = pos1y - mouse.y; 
    }
 
    function mousemove(e){
     var mousePos = oMousePos(e);
      if (onMove) {
-         z = mouse.x + rect.x; 
-         v = mouse.y + rect.y;
+         pos3x = mouse.x + rect.x; 
+         pos3y = mouse.y + rect.y;
+         dialogbox.style.top = (dialogbox.offsetTop - mouse.y) + "px";
+         dialogbox.style.left = (dialogbox.offsetTop - mouse.x) + "px";
    }
 }
  document.onmousemove = mouseX;
