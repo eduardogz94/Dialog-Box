@@ -13,7 +13,7 @@
          	 this.y = pos1y;
        	 }
 
-         dibujar(dialog){    
+         box(dialog){    
          	 dialogbox.style.left = pos1x + "px";
          	 dialogbox.style.top = pos1y + "px";
          	 dialogbox.style.display = "block";
@@ -33,7 +33,7 @@
  var dialogb = new Alert();
 
  //Make the DIV element draggagle:
- dragElement(dialogbox);
+ dragElement(dialogb);
 
  function dragElement(elmnt) {
      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -55,23 +55,22 @@
      document.onmousemove = elementDrag;
  }
 
- function elementDrag(e) {
-     e = e || window.event;
-     // calculate the new cursor position:
-     pos1 = pos3 - e.clientX;
-     pos2 = pos4 - e.clientY;
-     pos3 = e.clientX;
-     pos4 = e.clientY;
-     // set the element's new position:
-     dialogbox.style.top = (dialogbox.offsetTop - pos2) + "px";
-     dialogbox.style.left = (dialogbox.offsetLeft - pos1) + "px";
- }
+ 	 function elementDrag(e) {
+     	 e = e || window.event;
+     	 // calculate the new cursor position:
+     	 pos1 = pos3 - e.clientX;
+     	 pos2 = pos4 - e.clientY;
+     	 pos3 = e.clientX;
+     	 pos4 = e.clientY;
+     	 // set the element's new position:
+     	 dialogbox.style.top = (dialogbox.offsetTop - pos2) + "px";
+     	 dialogbox.style.left = (dialogbox.offsetLeft - pos1) + "px";
+ 	 }
 
- function closeDragElement() {
-     /* stop moving when mouse button is released:*/
-     document.onmouseup = null;
-     document.onmousemove = null;
- }
-
+ 	 function closeDragElement() {
+     	 /* stop moving when mouse button is released:*/
+     	 document.onmouseup = null;
+     	 document.onmousemove = null;
+ 	 }
 
 }
