@@ -16,8 +16,42 @@
 	width:400px;
 	z-index: 10;
 }
+ #boton {
+ 	background:none;
+ }
+ #boton:hover{
+	 background-color: black;
+	 color: red;
+ }
+
+ #boton4 {
+	 background:none;
+ }
+ #boton4:hover{
+	 background-color: pink;
+	 color: black;
+ }
+
+ #boton5 {
+	 padding: 0;
+	 background:none;
+}
+#boton5:hover{
+	 background-color: green;
+	 color: yellow;
+ }
+
+#boton6 {
+	 padding: 0;
+	 background:none;
+ }
+ #boton6:hover{
+	 background-color: gray;
+	 color: blue;
+ }
+
 
 #dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ background: #666; font-size:10px; padding:5px; color:#CCC; }
+#dialogbox > div > #dialogboxhead{ background: #666; font-size:10px; padding:5px; color:#CCC; text-align: right; }
 #dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
 #dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }

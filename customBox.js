@@ -23,13 +23,13 @@
      	
        	 maxA(){
        	 	 dialogbox.style.width = "600" + "px";
- 	 	 	 dialogbox.style.height = "200" + "px";
+ 	 	 	 dialogbox.style.height = "250" + "px";
  	 		 dialogboxbody.style.width = "545" + "px";
  	 		 dialogboxbody.style.height = "66" + "px";
  	 		 dialogboxhead.style.width = "575" + "px";
  	 		 dialogboxhead.style.height = "66" + "px";
  	 		 dialogboxfooter.style.width = "585" + "px";
- 	 		 dialogboxfooter.style.height = "66" + "px";
+ 	 		 dialogboxfooter.style.height = "46" + "px";
  		 }
 
  		 cerrar(){
@@ -39,16 +39,15 @@
 
  		 minA(){
      	 	 dialogbox.style.width = "400" + "px";
- 	 	 	 dialogbox.style.height = "108" + "px";
+ 	 	 	 dialogbox.style.height = "138" + "px";
  	 		 dialogboxbody.style.width = "346" + "px";
  	 		 dialogboxbody.style.height = "12" + "px";
  	 		 dialogboxhead.style.width = "376" + "px";
  	 		 dialogboxhead.style.height = "31" + "px";
- 	 		 dialogboxfooter.style.width = "585" + "px";
- 	 		 dialogboxfooter.style.height = "0" + "px";
+ 	 		 dialogboxfooter.style.width = "386" + "px";
+ 	 		 dialogboxfooter.style.height = "25" + "px";
  		 }
-
-     }
+   }
 
  var dialogb = new Alert();
 
@@ -86,4 +85,30 @@
      	 document.onmousemove = null;
  	 }
 
+ }
+
+
+ function getRandomColor() {
+     var letters = '0123456789ABCDEF';
+     var color = '#';
+     for (var i = 0; i < 6; i++) {
+   	 	 color += letters[Math.floor(Math.random() * 16)];
+  	 }
+  	 return color;
+ }
+
+ function setRandomColorDb() {
+  dialogbox.style.backgroundColor = getRandomColor();
+ }
+ 
+ function setRandomColorDbh() {
+  dialogboxhead.style.backgroundColor = getRandomColor();
+ }
+
+ function setRandomColorDbb() {
+  dialogboxbody.style.backgroundColor = getRandomColor();
+ }
+ 
+ function setRandomColorDbf() {
+  dialogboxfooter.style.backgroundColor = getRandomColor();
  }

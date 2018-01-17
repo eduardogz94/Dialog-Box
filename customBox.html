@@ -11,27 +11,34 @@
         <div>
          
          <div id="dialogboxhead">     
-             <button onclick="dialogb.minA();">
+             
+             <button id="boton3" onclick="dialogb.minA();">
                <img right width="10" height="10" src="images/min.png" />
              </button>
-             <button right onclick="dialogb.maxA();">
+             <button id="boton2" right onclick="dialogb.maxA();">
                <img width="10" height="10" src="images/max.png" />
              </button>
-              <button right onclick="dialogb.cerrar();">
+              <button id="boton1" right onclick="dialogb.cerrar();">
                <img width="10" height="10" src="images/close.png" />
              </button>
          </div>
          
          <div id="dialogboxbody"></div>
-         <div id="dialogboxfooter">THIS IS OUR DIALOG BOX</div>
+         
+         <div id="dialogboxfooter">
+           <button id="boton" onclick="setRandomColorDb()">Dialog Box</button>
+           <button id="boton4" onclick="setRandomColorDbh()">Header</button>           
+           <button id="boton5" onclick="setRandomColorDbb()">Body</button>
+           <button id="boton6" onclick="setRandomColorDbf()">Footer</button>
+         </div>
        
        </div>  
      </div>
 
      <center>
        <h2 >Web Box</h2>
-       <button onclick="dialogb.box('Testing Web Dialog.')">Custom Alert</button>
-       <button onclick="dialogb.box('Testing Web Dialog.')">Custom Alert 2</button>
+       <button onclick="dialogb.box('Dialog number 1.')">Custom Alert</button>
+       <button onclick="dialogb.box('Dialogo numero 2.')">Custom Alert 2</button>
     </center>
      
   <script src="customBox.js"></script> 
