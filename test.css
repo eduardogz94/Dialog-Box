@@ -16,39 +16,28 @@
 	width:400px;
 	z-index: 10;
 }
- #boton {
- 	background:none;
- }
- #boton:hover{
-	 background-color: black;
-	 color: red;
- }
-
- #boton4 {
-	 background:none;
- }
- #boton4:hover{
-	 background-color: pink;
-	 color: black;
- }
-
- #boton5 {
-	 padding: 0;
-	 background:none;
+ 
+ .btn {
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 0px 23px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
 }
-#boton5:hover{
-	 background-color: green;
-	 color: yellow;
- }
 
-#boton6 {
-	 padding: 0;
-	 background:none;
- }
- #boton6:hover{
-	 background-color: gray;
-	 color: blue;
- }
+.success {background-color: #4CAF50;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #2196F3;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} /* Red */ 
+.danger:hover {background: #da190b;}
+
+.default {background-color: #e7e7e7; color: black;} /* Gray */ 
+.default:hover {background: #ddd;}
 
 
 #dialogbox > div{ background:#FFF; margin:8px; }

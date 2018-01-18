@@ -44,7 +44,7 @@
  	 		 dialogboxbody.style.height = "12" + "px";
  	 		 dialogboxhead.style.width = "376" + "px";
  	 		 dialogboxhead.style.height = "31" + "px";
- 	 		 dialogboxfooter.style.width = "386" + "px";
+ 	 		 dialogboxfooter.style.width = "3" + "px";
  	 		 dialogboxfooter.style.height = "25" + "px";
  		 }
    }
